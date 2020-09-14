@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>NEW</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
+
+<body id="content">
+  <div class="results">
+    <center>
+      <h2 id="name" class="text-uppercase">{{title}}</h2>
+    </center>
+  </div>
+  <br>
+
+  <div id="mycontent">
+    <div id="mcontent">
+      <div class="poster-lg">
+        <img class="poster" style="border-radius: 40px;margin-left: 90px;" height="400" width="250" src={{poster}}>
+      </div>
+      <div class="poster-sm text-center">
+        <img class="poster" style="border-radius: 40px;margin-bottom: 5%;" height="400" width="250" src={{poster}}>
+      </div>
+      <div id="details">
+        <br />
+        <h6 id="title" style="color:white;">TITLE: &nbsp;{{title}}</h6>
+        <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW:
+          <br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
+        <h6 id="vote_average" style="color:white;">RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
+        <h6 id="genres" style="color:white;">GENRE: &nbsp;{{genres}}</h6>
+        <h6 id="runtime" style="color:white;">RUNTIME: &nbsp;{{runtime}}</h6>
+       
+        
+      </div>
+    </div>
+  </div>
+  <br />
+
+
+  ]
+  {% if movie_cards|length > 1 %}
+
+
+  <div class="movie" style="color: #E8E8E8;">
+    <center>
+      <h1 style="color: #d48bf0; font-style: italic;">RECOMMENDED MOVIES FOR YOU</h1>
+      <h5 style="color: #18f2f2; font-style: italic;">(Click any of the movies to get recommendation)</h5>
+      <br>
+      <h3 style="color: #d48bf0; font-style: italic;">We Bring You Nearly 5000 BOLLYWOOD MOVIES</h3>
+      <h4 style="color: #18f2f2; font-style: italic;">From <strong>1980 </strong> to <strong>Latest Movies.</strong></h4>
+    </center>
+  </div>
+
+  <div class="movie-content">
+    {% for poster, title in movie_cards.items() if not movie_cards.hidden %}
+    <div class="card" style="width: 18rem; border-radius: 20px;" title="{{title}}" onclick="recommendcard(this)">
+      <div class="imghvr">
+        <img class="card-img-top" height="360" width="240" style="border-radius: 20px;" alt="{{title}} - poster" src={{poster}}>
+        <figcaption class="fig">
+          <button class="card-btn btn btn-danger"> Click Me </button>
+        </figcaption>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">{{title|capitalize}}</h5>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+    <center>
+      <h4 style="color: #bded74; font-size: 30px;">HAPPY SEARCHING !!</h4>
+      <h6 style="color: #f294a5; font-size: 15px;"><strong></strong>CREDITS</strong>:- Mahesh , Suved , Kanchan , Amol .</h6>
+    </center>
+
+  {% endif %}
+
+
+  </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
