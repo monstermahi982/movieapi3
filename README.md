@@ -19,7 +19,6 @@
 <h5>API used :--<a href="http://www.omdbapi.com/">OMDB website</a></h5>
 <br>
 <p>enter any one of your Favourite Bollywood movie name and search ;-----</p>
-<br>
 <h5>Example :- SULTAN</h5>
 <h6>output:-----</h6>
 <img src="images/image2.png" alt="openening image" height="400" width="900"  />
