@@ -10,7 +10,7 @@
 <p>2)HTML</p>
 <p>3)CSS</p>
 <p>4)JAVASCRIPT</p>
-<br>
+
 <h4>Libaries used :--</h4>
 <p>1)Flask</p>
 <p>2)JQuery</p>
@@ -21,10 +21,9 @@
 <p>enter any one of your Favourite Bollywood movie name and search ;-----</p>
 <br>
 <h5>Example :- SULTAN</h5>
-<br>
 <h6>output:-----</h6>
-<br>
 <img src="images/image2.png" alt="openening image" height="400" width="900"  />
 <br>
 <img src="images/image3.png" alt="openening image" height="400" width="900"  />
 <br>
+--------------------------------------------------------------------------------
